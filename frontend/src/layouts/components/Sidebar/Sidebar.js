@@ -42,7 +42,10 @@ const sidebarList = [
 
 function Sidebar({ showSidebar, handleToggleSidebar }) {
     return (
-        <aside className="w-[290px] h-screen" style={{ display: showSidebar ? 'block' : 'none' }}>
+        <aside
+            className="w-[290px] h-screen border-solid border-r-[1px] border-[rgba(0,0,0,0.1)]"
+            style={{ display: showSidebar ? 'block' : 'none' }}
+        >
             <div className="mt-[16px] px-[24px] h-[48px] flex items-center">
                 <button onClick={handleToggleSidebar}>
                     <BarsIcon />
