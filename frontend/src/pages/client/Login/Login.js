@@ -5,10 +5,15 @@ import { Link } from 'react-router-dom';
 import images from '~/assets/images';
 import config from '~/config';
 import Image from '~/components/Image/Image';
+import { signInWithGoogle } from '~/firebaseConfig';
 
 function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
+    };
+
+    const handleSignInGoogle = () => {
+        signInWithGoogle();
     };
 
     return (
@@ -37,7 +42,10 @@ function Login() {
                 <span className="my-6 text-[#555] text-2xl">OR</span>
 
                 <div className="flex flex-col items-center w-full gap-4">
-                    <button className="bg-white border-[1px] border-solid border-[#ccc] text-2xl text-[#333] w-full p-4 rounded-md hover:bg-[rgba(0,0,0,0.05)]">
+                    <button
+                        className="bg-white border-[1px] border-solid border-[#ccc] text-2xl text-[#333] w-full p-4 rounded-md hover:bg-[rgba(0,0,0,0.05)]"
+                        onClick={handleSignInGoogle}
+                    >
                         <FontAwesomeIcon icon={faGoogle} className="text-red-600" />
                         <span className="ml-3">Continue with Google</span>
                     </button>
